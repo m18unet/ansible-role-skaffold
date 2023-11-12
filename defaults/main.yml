@@ -1,0 +1,8 @@
+---
+# See available releases: https://github.com/GoogleContainerTools/skaffold/releases
+skaffold_version: '2.9.0'
+skaffold_platform: linux
+skaffold_arch: amd64
+skaffold_bin_path: /usr/local/bin/skaffold
+skaffold_download_url: https://github.com/GoogleContainerTools/skaffold/releases/download/v{{ skaffold_version }}/skaffold-{{ skaffold_platform }}-{{ skaffold_arch}}
+skaffold_checksum_url: "{{ skaffold_download_url }}.sha256"

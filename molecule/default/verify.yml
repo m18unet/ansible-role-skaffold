@@ -1,0 +1,19 @@
+---
+- name: Verify
+  hosts: all
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - ../../defaults/main.yml
+
+  tasks:
+    - name: Check the skaffold version.
+      command: "{{ skaffold_bin_path }} version"
+      changed_when: false
+      register: skaffold_verify_version
+
+    - name: Verify skaffold's version is {{ skaffold_version }}
+      assert:
+        that:
+          - skaffold_version in skaffold_verify_version.stdout

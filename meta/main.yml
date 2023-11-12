@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  author: m18unet
+  role_name: skaffold
+  description: An Ansible Role that installs skaffold.
+
+  license: MIT
+
+  min_ansible_version: 2.10.0
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - skaffold
+    - kubernetes
+    - k8s
+    - docker
+    - podman
+    - containers
+    - developer-tools

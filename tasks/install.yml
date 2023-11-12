@@ -1,0 +1,8 @@
+---
+- name: Download the skaffold binary.
+  get_url:
+    url: "{{ skaffold_download_url }}"
+    dest: "{{ skaffold_bin_path }}"
+    checksum: sha256:{{ skaffold_checksum_url }}
+    mode: 0755
+  become: true

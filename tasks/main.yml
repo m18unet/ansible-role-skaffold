@@ -1,0 +1,17 @@
+---
+- name: Check the presence of the skaffold binary.
+  stat:
+    path: "{{ skaffold_bin_path }}"
+  register: skaffold_check
+
+- name: Check the skaffold version.
+  shell: "{{ skaffold_bin_path }} version"
+  failed_when: false
+  changed_when: false
+  register: skaffold_current_version
+
+- name: Install skaffold v{{ skaffold_version }}
+  include_tasks: install.yml
+  when: >-
+    not skaffold_check.stat.exists
+    or skaffold_version not in skaffold_current_version.stdout
