@@ -19,7 +19,7 @@ None.
 ```yaml
 - hosts: all
   roles:
-    - m18uet.skaffold
+    - m18unet.skaffold
 ```
 
 ## License
